@@ -40,11 +40,10 @@ mapping(address => uint256) public EthContributed;
 * @param amount amount of tokens purchased
 */
 
-event TokenPurchase(address indexed purchaser, address indexed beneficiary, 
-uint256 value, uint256 amount);
+ event Bought(uint256 amount);
 
 
-function Contributions(uint256 _startTime, uint256 _endTime, uint256 _rate, 
+constructor(uint256 _startTime, uint256 _endTime, uint256 _rate, 
 address _wallet, MyToken _token) public {
 require(_startTime >= now);
 require(_endTime >= _startTime);
@@ -78,14 +77,15 @@ uint256 tokens = getTokenAmount(weiAmount);
 // update state
 weiRaised = weiRaised.add(weiAmount);
 
-token.generateTokens(beneficiary, tokens);
-TokenPurchase(msg.sender, beneficiary, weiAmount, tokens);
+ uint256 amountTobuy = msg.value;
+ require(amountTobuy > 0, "You need to send some Ether");
+ token.transfer(beneficiary, tokens);
+ emit Bought(amountTobuy);
 
-forwardFunds();
 EthContributed[beneficiary] = weiAmount;
 }
 
-// @return true if crowdsale event has ended
+// @return true if time has ended
 function hasEnded() public view returns (bool) {
 return now > endTime;
 }
