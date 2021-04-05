@@ -5,7 +5,7 @@ pragma solidity ^0.5.16;
 /// @title ERC20 Token
 /// @author Riya Rana
 /// @notice You can use this contract for only the most basic simulation
-
+ 
 import "./MyToken.sol";
 import "./SafeMath.sol"; 
 
