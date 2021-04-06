@@ -1,5 +1,5 @@
 
-pragma solidity ^0.5.16;
+pragma solidity ^0.8.0;
 
 
 /// @title ERC20 Token
@@ -59,7 +59,7 @@ token = _token;
 }
 
  // fallback function can be used to buy tokens
- function () external payable {
+ fallback() external payable{
  buyTokens(msg.sender);
 
  }
