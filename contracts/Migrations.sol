@@ -9,7 +9,7 @@ contract Migrations {
     require(
       msg.sender == owner,
       "This function is restricted to the contract's owner"
-    );
+    ); 
     _;
   }
 
