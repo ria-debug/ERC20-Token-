@@ -10,7 +10,7 @@ import "./MyToken.sol";
 import "./SafeMath.sol"; 
 
 
-contract Contributions is MyToken{
+contract Contributions is MyToken{ 
 
 using SafeMath for uint256;
 
