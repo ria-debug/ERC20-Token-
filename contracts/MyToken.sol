@@ -11,7 +11,7 @@ contract MyToken is ERC20 {
     
     function generateTokens(address _beneficiary, uint256 _tokens) public {
         
-        transfer(_beneficiary, _tokens);
+        transfer(_beneficiary, _tokens); 
         
     }
 }
