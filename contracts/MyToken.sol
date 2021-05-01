@@ -8,7 +8,7 @@ contract MyToken is ERC20 {
     _mint(msg.sender, initialSupply);
         
     }
-    
+     
     function generateTokens(address _beneficiary, uint256 _tokens) public {
         
         transfer(_beneficiary, _tokens); 
