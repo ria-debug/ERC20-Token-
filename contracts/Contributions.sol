@@ -12,7 +12,7 @@ import "./SafeMath.sol";
 
 contract Contributions is MyToken{ 
 
-using SafeMath for uint256;
+using SafeMath for uint256; 
 
 // The token being sold
 MyToken public token;
